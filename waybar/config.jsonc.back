@@ -1,0 +1,41 @@
+{
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["custom/internetspeed","network", "pulseaudio", "clock", "custom/power"],
+  "clock": {
+    "format": "<span>  {:%a-%d %H:%M:%S}</span>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1 // update every second
+  },
+
+  "network": {
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'> </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#F57C00'>󱊪 </span> Connected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span> Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "custom/power": {
+    "format": "<span> </span>", // Use class for styling
+    "on-click": "~/.config/scripts/power-options.sh", // Command to shutdown
+    "interval": 0 // No need to update
+  },
+  "custom/internetspeed": {
+    	"interface": "ens33",  // Replace with your interface name (e.g., eth0, wlan0, etc.)
+	"format-up": "{up}↑",    // Format for upload speed (up arrow)
+    	"format-down": "{down}↓",  // Format for download speed (down arrow)
+    	"format-connected": "{interface}: {ip}", // To show the connected network
+    	"max-length": 20
+  }
+}
+
+
