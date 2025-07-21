@@ -40,7 +40,7 @@ vim.o.splitbelow = true
 vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
 vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
 
--- Map Ctrl+Esc to quit Neovim
+-- Map Ctrl+ q to quit Neovim
 vim.keymap.set("n", "<C-q>", ":quit<CR>", { noremap = true, silent = true })
 
 -- Ctrl + S to Save
@@ -56,5 +56,3 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.notify("File saved: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
   end,
 })
-
-
