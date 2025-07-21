@@ -42,3 +42,19 @@ vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down", silen
 
 -- Map Ctrl+Esc to quit Neovim
 vim.keymap.set("n", "<C-q>", ":quit<CR>", { noremap = true, silent = true })
+
+-- Ctrl + S to Save
+vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 10
+
+-- Notify on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  callback = function()
+    vim.notify("File saved: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
+  end,
+})
+
+
