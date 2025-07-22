@@ -56,3 +56,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.notify("File saved: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
   end,
 })
+
+vim.keymap.set("n", "<A-z>", function()
+  vim.wo.wrap = not vim.wo.wrap
+end)
