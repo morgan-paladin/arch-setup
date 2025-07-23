@@ -42,6 +42,7 @@ vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down", silen
 
 -- Map Ctrl+ q to quit Neovim
 vim.keymap.set("n", "<C-q>", ":quit<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-q-q-q>", ":quit<CR>", { noremap = true, silent = true })
 
 -- Ctrl + S to Save
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
@@ -56,6 +57,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.notify("File saved: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
   end,
 })
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
+    border = "rounded", -- or "single", "double", "shadow", or a custom table
+  }
+)
 
 vim.keymap.set("n", "<A-z>", function()
   vim.wo.wrap = not vim.wo.wrap
