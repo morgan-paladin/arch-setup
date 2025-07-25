@@ -58,13 +58,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {
-    border = "rounded", -- or "single", "double", "shadow", or a custom table
-  }
-)
-
+-- Toggle line wrapping with Alt + z
 vim.keymap.set("n", "<A-z>", function()
   vim.wo.wrap = not vim.wo.wrap
 end)
+
+-- Disable swap files
+-- Swap files can cause issues with version control and are not needed in most cases
+vim.opt.swapfile = false
