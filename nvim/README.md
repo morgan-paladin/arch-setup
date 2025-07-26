@@ -13,7 +13,7 @@ A modern Neovim configuration with LSP support, completions, and useful plugins 
   - [Gitsigns](src/plugins/git-config.lua) for inline git information
 - **LSP Support**:
   - Built-in LSP configuration with Mason
-  - Automatic formatting with none-ls
+  - Automatic formatting with conform
   - Code completions with nvim-cmp
 - **Quality of Life**:
   - Auto-pairs for brackets
