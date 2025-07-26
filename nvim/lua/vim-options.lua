@@ -52,18 +52,17 @@ vim.o.scrolloff = 10
 
 -- Notify on save
 vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = "*",
-	callback = function()
-		vim.notify("File saved: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
-	end,
+  pattern = "*",
+  callback = function()
+    vim.notify("File saved: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
+  end,
 })
 
 -- Toggle line wrapping with Alt + z
 vim.keymap.set("n", "<A-z>", function()
-	vim.wo.wrap = not vim.wo.wrap
+  vim.wo.wrap = not vim.wo.wrap
 end)
 
 -- Disable swap files
 -- Swap files can cause issues with version control and are not needed in most cases
 vim.opt.swapfile = false
-
