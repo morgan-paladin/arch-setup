@@ -57,7 +57,7 @@ A modern Neovim configuration with LSP support, completions, and useful plugins 
 
 ```bash
 git clone <repo-url> ~/.config/nvim
-
+```
 
 2. Start Neovim - lazy.nvim will automatically install all plugins
 
@@ -67,4 +67,7 @@ git clone <repo-url> ~/.config/nvim
 - Git
 - A Nerd Font (optional, disabled by default)
 - ripgrep (for Telescope live grep)
+
+```
+
 ```
